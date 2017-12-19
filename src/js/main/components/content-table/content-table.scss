@@ -1,0 +1,36 @@
+.content-table {
+    width: 100%;
+    max-height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow: 0px 0px 20px 0px #b7b7b7;
+    border-radius: 5px;
+
+    &::-webkit-scrollbar
+    {
+        width: 8px;
+        border-radius: 5px;
+    }
+    &::-webkit-scrollbar-track
+    {
+        border-radius: 5px;
+    }
+    &::-webkit-scrollbar-thumb
+    {
+        border-radius: 5px;
+        background-color: rgb(104, 104, 104);
+    }
+
+    &_header {
+        padding: 0 20px;
+        display: flex;
+        height: 50px;
+        align-items: center;
+        font-weight: 600;
+    }
+    
+    &_column-caption {
+        width: 50%;
+    }
+}

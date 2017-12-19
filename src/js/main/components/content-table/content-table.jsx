@@ -7,6 +7,7 @@ import './content-table.scss';
 
 export default class ContentTable extends React.PureComponent {
     static propTypes = {
+        startFetchRepos: PropTypes.func.isRequired,
         users: PropTypes.arrayOf(PropTypes.shape({
             id: PropTypes.number.isRequired,
             login: PropTypes.string.isRequired,
@@ -22,7 +23,7 @@ export default class ContentTable extends React.PureComponent {
     render() {
         const content = this.props.users
             ? this.props.users.map(user => (
-                <UserRow avatar={user.avatar} name={user.login} key={user.id} />
+                <UserRow avatar={user.avatar} name={user.login} key={user.id} startFetchRepos={this.props.startFetchRepos} />
             ))
             : null;
 

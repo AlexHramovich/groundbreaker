@@ -8,9 +8,14 @@ import './user-row.scss';
 
 export default class UserRow extends React.PureComponent {
     static propTypes = {
+        startFetchRepos: PropTypes.func.isRequired,
         name: PropTypes.string.isRequired,
         avatar: PropTypes.string.isRequired,
     };
+
+    openPortal = () => {
+        this.props.startFetchRepos(this.props.name);
+    }
 
     render() {
         return (
@@ -20,6 +25,7 @@ export default class UserRow extends React.PureComponent {
                     leftAvatar={<Avatar src={this.props.avatar} />}
                     insetChildren
                     primaryText={this.props.name}
+                    onClick={this.openPortal}
                 />
             </div>
         );

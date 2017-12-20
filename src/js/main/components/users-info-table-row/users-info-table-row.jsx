@@ -1,26 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import './users-info-table-row.scss';
+import { PulseLoader } from 'react-spinners';
+import { TableRow, TableRowColumn } from 'material-ui/Table';
 
 export default class UsersInfoTableRow extends React.PureComponent {
     static propTypes = {
-        name: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        issues: PropTypes.string,
-    }
+        name: PropTypes.string,
+        description: PropTypes.string,
+        issues: PropTypes.number,
+    };
 
     static defaultProps = {
-        issues: '',
-    }
+        issues: null,
+        name: '',
+        description: '',
+    };
 
     render() {
+        const style = {
+            textAlign: 'center',
+            whiteSpace: 'normal',
+        };
+
         return (
-            <div className="users-info-table-row">
-                <div className="users-info-table-row_repo-name">{this.props.name}</div>
-                <div className="users-info-table-row_description">{this.props.description}</div>
-                <div className="users-info-table-row_issues">{this.props.issues}</div>
-            </div>
+            <TableRow style={style}>
+                <TableRowColumn style={style}>{this.props.name}</TableRowColumn>
+                <TableRowColumn style={style}>{this.props.description}</TableRowColumn>
+                <TableRowColumn style={style}>
+                    {this.props.issues !== null ? (
+                        this.props.issues
+                    ) : (
+                        <PulseLoader color="#000" size={10} loading />
+                    )}
+                </TableRowColumn>
+            </TableRow>
         );
     }
 }

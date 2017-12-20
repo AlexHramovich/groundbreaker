@@ -8,12 +8,14 @@ import './user-row.scss';
 
 export default class UserRow extends React.PureComponent {
     static propTypes = {
+        changePortalVisibility: PropTypes.func.isRequired,
         startFetchRepos: PropTypes.func.isRequired,
         name: PropTypes.string.isRequired,
         avatar: PropTypes.string.isRequired,
     };
 
     openPortal = () => {
+        this.props.changePortalVisibility();
         this.props.startFetchRepos(this.props.name);
     }
 

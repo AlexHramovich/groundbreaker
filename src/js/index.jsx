@@ -4,7 +4,7 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import Users from 'main/reducers/users-reducer';
-import Repos from 'main/reducers/portal-reducer';
+import Repos from 'main/reducers/repos-reducer';
 
 import MainContainer from 'main/containers/main-container';
 

@@ -8,27 +8,48 @@
     height: 50vh;
     margin: 20vh 0;
 
-    &_header {
+    &__header {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
-    &_header img {
+    &__header img {
         max-width: 150px;
     }
 
-    &_user-name {
-        padding: 0 20px;
+    &__user-name {
+        font-size: 30px;
+        padding: 20px 20px;
+        font-weight: 600;
     }
 
-    &_content {
+    &__content {
         width: 80%;
+        max-height: 80vh;
         color:white;
-        background-color: rgba(23, 53, 80, 0.7098039215686275);
+        background-color: rgba(23, 53, 80, 0.8);
         border-radius: 10px;
         font-family: 'Montserrat', sans-serif;
         font-size: 20px;
+        overflow: auto;
+
+        &::-webkit-scrollbar
+        {
+            width: 10px;
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-track
+        {
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-thumb
+        {
+            border-radius: 10px;
+            background-color: rgba(252, 252, 252, 0.986);
+        }
     }
+
+    
 }

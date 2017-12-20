@@ -1,0 +1,11 @@
+.search-control-panel {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 20px 0px #b7b7b7;
+    border-radius: 5px;
+
+    &__caption {
+        font-size: 50px;
+    }
+}
